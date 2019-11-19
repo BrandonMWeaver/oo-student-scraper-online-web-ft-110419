@@ -21,6 +21,7 @@ class Scraper
     links.each { |link|
       student_profile_hash[:twitter] = link.xpath("@href").text if link.xpath("@href").text.include?("twitter")
       student_profile_hash[:linkedin] = link.xpath("@href").text if link.xpath("@href").text.include?("linkedin")
+      student_profile_hash[:github] = link.xpath("@href").text if link.xpath("@href").text.include?("github")
     }
     pp student_profile_hash
   end
