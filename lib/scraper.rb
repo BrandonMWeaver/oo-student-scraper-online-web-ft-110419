@@ -15,8 +15,10 @@ class Scraper
   end
   
   def self.scrape_profile_page(profile_url)
+    student_profile_hash = {}
     document = Nokogiri::HTML(open(profile_url))
-    puts document.css(".social-icon-container a")
+    student_profile_hash[:twitter] = document.css(".social-icon-container a")[0]
+    return student_profile_hash
   end
   
 end
