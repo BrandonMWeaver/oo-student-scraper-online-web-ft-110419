@@ -18,7 +18,7 @@ class Scraper
     student_profile_hash = {}
     document = Nokogiri::HTML(open(profile_url))
     links = document.css(".social-icon-container a")
-    student_profile_hash[:twitter] = links[0]("@href").text
+    student_profile_hash[:twitter] = links[0].xpath("@href").text
   end
   
 end
