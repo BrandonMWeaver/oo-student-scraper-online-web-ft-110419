@@ -11,6 +11,7 @@ class Scraper
                           location: card.css(".student-location").text,
                           profile_url: card }
     }
+    pp student_hashes
   end
   
   def self.scrape_profile_page(profile_url)
