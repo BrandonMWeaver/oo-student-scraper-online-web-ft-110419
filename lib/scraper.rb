@@ -4,7 +4,13 @@ require 'pry'
 class Scraper
   
   def self.scrape_index_page(index_url)
-    hash = Nokogiri::HTML(open-uri("https://learn-co-curriculum.github.io/student-scraper-test-page/"))
+    student_hashes = []
+    document = Nokogiri(open(index_url))
+    document.css(".student-card").each { |card|
+      student_hashes << { name: card.css(".student-name").text,
+                          location: card.css(".student-location").text,
+                          profile_url: card }
+    }
   end
   
   def self.scrape_profile_page(profile_url)
