@@ -13,6 +13,7 @@ class Student
     students_array.each { |student|
       student.each { |key, value| self.send(("#{key}="), value) }
       @@all << self
+    }
   end
   
   def add_student_attributes(attributes_hash)
