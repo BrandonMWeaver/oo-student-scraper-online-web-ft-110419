@@ -23,6 +23,7 @@ class Scraper
       student_profile_hash[:linkedin] = link.xpath("@href").text
       student_profile_hash[:github] = link.xpath("@href").text
     }
+    pp student_profile_hash
   end
   
 end
