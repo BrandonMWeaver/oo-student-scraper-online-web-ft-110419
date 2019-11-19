@@ -9,7 +9,7 @@ class Scraper
     document.css(".student-card").each { |card|
       student_hashes << { name: card.css(".student-name").text,
                           location: card.css(".student-location").text,
-                          profile_url: "temp" }
+                          profile_url: card }
     }
     pp student_hashes
   end
