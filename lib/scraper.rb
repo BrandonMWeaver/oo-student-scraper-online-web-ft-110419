@@ -17,7 +17,7 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     student_profile_hash = {}
     document = Nokogiri::HTML(open(profile_url))
-    student_profile_hash[:twitter] = document.xpath("a/@href")[0].text
+    student_profile_hash[:twitter] = document.css(".")
     return student_profile_hash
   end
   
