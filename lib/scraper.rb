@@ -30,7 +30,7 @@ class Scraper
       end
     }
     student_profile_hash[:profile_quote] = document.css(".profile-quote").text
-    student_profile_hash[:bio] = document.css("")
+    student_profile_hash[:bio] = document.css(".description-holder p").text
     pp student_profile_hash
   end
   
