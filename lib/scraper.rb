@@ -20,6 +20,7 @@ class Scraper
     links = document.css(".social-icon-container a")
     links.each { |link|
       student_profile_hash[:twitter] = link.xpath("@href").text if link.xpath("@href").text.include?("twitter")
+      student_profile_hash[:linkedin] = link.xpath("@href").text if link.xpath("@href").text.include?("linkedin")
     }
     pp student_profile_hash
   end
