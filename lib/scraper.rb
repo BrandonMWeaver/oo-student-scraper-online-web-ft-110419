@@ -29,7 +29,7 @@ class Scraper
         student_profile_hash[:blog] = link.xpath("@href").text
       end
     }
-    student_profile_hash[:profile_quote] = document.css(".profile-quote")
+    student_profile_hash[:profile_quote] = document.css(".profile-quote").text
     pp student_profile_hash
   end
   
